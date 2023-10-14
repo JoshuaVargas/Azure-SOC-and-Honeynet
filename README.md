@@ -28,6 +28,8 @@ Pre-hardening metrics are based on resources that were exposed to the internet. 
 
 ### Pre-hardening Architecture
 
+![Alt text](imgs/exposed-architecture.png)
+
 ### Pre-hardening Metrics
 
 Below you will find attack maps detailing where certain attacks were coming from in the 24 hours that pre-hardened environment was run.
@@ -59,9 +61,11 @@ The following table details the metrics measured in the insecure environment for
 
 ## Architecture and Metrics Post Hardening / Security Control Implementation
 
-Post-hardening metrics are based on hardening the NSGs by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected using built-in firewalls and private endpoints.
+Post-hardening metrics are based on hardening the NSGs by blocking ALL traffic with the exception of my admin workstation as well as the proper configuration of firewalls and private endpoints for the key vault and storage account. The VMs, key vault, and storage accounts were also all placed within the same subnet which also had an NSG that only allowed traffic from my workstation.
 
 ### Post-hardening Architecture
+
+![Alt text](imgs/hardened-architechture.png)
 
 ### Post-hardening Metrics
 
