@@ -85,3 +85,15 @@ The following table details the metrics measured in the hardened environment for
 | AzureNetworkAnalytics_CL | 0
 
 *Note: Paradoxically, the number of logs generated for SecurityEvent increased after hardening the environment. However, upon investigation, it became evident that when accounting for logon failures or successes, the decrease was dramatic. Thus, the query run to determine the metrics seen above filtered out all non-logon events on the Windows VM.
+
+## Conclusion
+
+This project demonstrated the use of a small, but effective, honeynet which was constructed within Microsoft Azure. A Log Analytics Workspace was used to integrate logs, and those logs were then further used within Microsoft Sentinel to trigger alerts and create incidents based on the pre-hardened honeynet environment. Upon the implementation of more robust security controls in line with NIST 800-53 SC7, there was a 97.26% decrease in SecurityEvents, a 99.86% decrease in Syslog, and a 100% decrease in SecurityAlert, Security Incidents, and malicious NSG flows.
+
+### Final Thoughts
+
+After going through this exercise, it has become apparent that modern SIEM solutions are essential to IT security. Without a proper SIEM solution, an IT professional might be relegated to decentralized logs which would increase the likelihood of crucial events being missed, logs piling up as they await investigation, and a loss of overall productivity. However, a SIEM itself is as useful as the configuration and people behind it, thus properly trained and well experienced members of a SOC are required in order to maintain operation security.
+
+Without a Security Engineer, a SOC may not have the tools required to perform the job, and a lack of a Detection Engineer would result in increased difficulty regard the development, implementaion, and maintenance of detection rules. Without SOC Analysts, the alerts mean nothing because they go nowhere but to an unmonitored dashboard, and a lack of Incident Responders would mean that incident handling would never occur beyond the Preparation and Detection & Analysis phases. A lack of GRC specialists would mean that compliance would be harder to achieve depending on the sector a particular business operates within. All of this points to, what I believe, is the most important part of any cybersecurity team: people.
+
+In reality, no network will every be hardened to the point that only the admin would be able to connect to it. Applications must be built, invoices must be paid, technical documents must be written, and any other number of things must occur on a day-to-day basis, and all of this must be facilitated through the use of networks which will, at some point, be exposed to the internet. Eventually, someone will make a mistake and a malicious NPM package might be installed, or a malicious invoice might contain ransomware, or a technical writer might be the vicitm of a driveby download. People will initiate these events, and people will respond to them.
