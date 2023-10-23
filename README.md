@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The purpose of this lab was to deploy a honeynet using vulnerable VMs, log the security events occuring on those VMs, implement a SOC using Micorosoft Sentinel, and harden those VMs against attack. The honeynet mainly consists of a Windows 10 VM, a Linux VM. Logs are ingested from various resources in a Log Analytics workspace which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. The insecure environment is run for 24 hours during which security metrics are measured, security controls are then implemented to harden the environment using recommendations based on NIST 800-53, and metrics are measured for another 24 hours using the hardened environment.
+The purpose of this lab was to deploy a honeynet using vulnerable VMs, log the security events occurring on those VMs, implement a SOC using Microsoft Sentinel, and harden those VMs against attack. The honeynet mainly consists of a Windows 10 VM, a Linux VM. Logs are ingested from various resources in a Log Analytics workspace which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. The insecure environment is run for 24 hours during which security metrics are measured, security controls are then implemented to harden the environment using recommendations based on NIST 800-53, and metrics are measured for another 24 hours using the hardened environment.
 
 ### Metrics Captured
 
